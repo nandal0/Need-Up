@@ -1,0 +1,107 @@
+
+.register-forms{
+  display: flex;
+  justify-items: space-around;
+  margin: auto;
+  
+  /* width: 100vw; */
+  /* overflow: hidden !important; */
+
+}
+.login-forms{
+  display: flex;
+  justify-content: space-around;
+}
+
+section{
+  /* display: flex; */
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.register-form-container {
+  margin-left: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin-top: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  /* padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px; */
+}
+
+button[type="submit"] {
+  padding: 10px;
+  background-color: #0074d9;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+
+.herotwo{
+  position: absolute;
+  top: -50px;right: -34vw;
+  width: 80vw;
+  height: 104vh;
+  background-color: #CCC9EF;
+  border-radius: 2005px;
+}
+
+.herobg{
+  position: absolute;
+  width: 80vw;
+  height: 120vh;
+  left: -35vw;top: -29px;
+  bottom: -99px;
+  background: #CCC9EF;
+  border-radius: 1500px;
+}
+
+.singup-container{
+  width: 600px;
+  margin: 100px;
+
+}
+.login-container{
+  width: 500px;
+  margin: 100px;
+margin-left: 200px;
+}
+
+.reg-logo
+{
+  z-index: 41;
+}
+.reg-logo>img{
+  width: 700px;
+  height: 501px;
+  object-fit: contain;
+}

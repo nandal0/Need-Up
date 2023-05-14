@@ -1,0 +1,19 @@
+.not-found{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 10%;
+    background-color: rgb(34, 35, 41);
+}
+.not-found__img{
+    height: 400px;
+    width: 400px;
+}
+.not-found h2{
+    font-weight: bold;
+    color: white;
+}
