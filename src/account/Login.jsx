@@ -52,7 +52,7 @@
 //     )
 // }
 
-import React, { useState } from "react";
+// import React, { useState } from "react";
 
 // Material UI Imports
 import {
@@ -73,7 +73,7 @@ import Paper from "@mui/material/Paper";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import LoginIcon from "@mui/icons-material/Login";
-import registerlogo from '../assets/images/logos/registerlogo.png';
+import registerlogo from "../assets/images/logos/registerlogo.png";
 
 // Email Validation
 const isEmail = (email) =>
@@ -161,112 +161,24 @@ function Login() {
   return (
     <section className="login-forms">
       <div class="herobg"></div>
-
       <div className="reg-logo">
-<img src={registerlogo} alt="logo" />
+        <img src={registerlogo} alt="logo" />
+      </div>
 
-</div>
-
-      <div className="login-container">
-        <Paper elevation={3} style={{ padding: "10px", paddingBottom: "50px" }}>
+      <div class="form-container">
+        <form>
           <div>
-            <div>
-              <TextField
-                label="Email Address"
-                fullWidth
-                error={emailError}
-                id="standard-basic"
-                variant="standard"
-                sx={{ width: "100%" }}
-                value={emailInput}
-                InputProps={{}}
-                size="small"
-                onBlur={handleEmail}
-                onChange={(event) => {
-                  setEmailInput(event.target.value);
-                }}
-              />
-            </div>
-            <div style={{ marginTop: "5px" }}>
-              <FormControl sx={{ width: "100%" }} variant="standard">
-                <InputLabel
-                  error={passwordError}
-                  htmlFor="standard-adornment-password"
-                >
-                  Password
-                </InputLabel>
-                <Input
-                  error={passwordError}
-                  onBlur={handlePassword}
-                  id="standard-adornment-password"
-                  type={showPassword ? "text" : "password"}
-                  onChange={(event) => {
-                    setPasswordInput(event.target.value);
-                  }}
-                  value={passwordInput}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                      >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                />
-              </FormControl>
-            </div>
-
-            <div style={{ fontSize: "10px" }}>
-              <Checkbox
-                {...label}
-                size="small"
-                onChange={(event) => setRememberMe(event.target.checked)}
-              />
-              Remember Me
-            </div>
-
-            <div style={{ marginTop: "10px" }}>
-              <Button
-                variant="contained"
-                fullWidth
-                // startIcon={<LoginIcon />}
-                onClick={handleSubmit}
-              >
-                Register
-              </Button>
-            </div>
-
-            {/* Show Form Error if any */}
-            {formValid && (
-              <Stack sx={{ width: "100%", paddingTop: "10px" }} spacing={2}>
-                <Alert severity="error" size="small">
-                  {formValid}
-                </Alert>
-              </Stack>
-            )}
-
-            {/* Show Success if no issues */}
-            {success && (
-              <Stack sx={{ width: "100%", paddingTop: "10px" }} spacing={2}>
-                <Alert severity="success" size="small">
-                  {success}
-                </Alert>
-              </Stack>
-            )}
-
-            <div style={{ marginTop: "7px", fontSize: "10px" }} margin="left">
-              <a>Forgot Password</a>
-              <br />
-              Do you have an account ?{" "}
-              <small style={{ textDecoration: "underline", color: "blue" }}>
-                Sign Up
-              </small>
-            </div>
+            <TextField id="outlined-basic" label="Email" variant="outlined" />
           </div>
-        </Paper>
+          <div>
+            <TextField
+              id="outlined-basic"
+              label="Password"
+              variant="outlined"
+            />
+          </div>
+          <button class="form-btn">Signin</button>
+        </form>
       </div>
     </section>
   );
