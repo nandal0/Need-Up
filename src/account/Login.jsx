@@ -52,224 +52,131 @@
 //     )
 // }
 
-import React, { useState } from "react";
-
-// Material UI Imports
-import {
-  TextField,
-  InputAdornment,
-  FormControl,
-  InputLabel,
-  IconButton,
-  Button,
-  Input,
-  Checkbox,
-  Alert,
-  Stack,
-} from "@mui/material";
-import Paper from "@mui/material/Paper";
-
-// Material UI Icon Imports
-import Visibility from "@mui/icons-material/Visibility";
-import VisibilityOff from "@mui/icons-material/VisibilityOff";
-import LoginIcon from "@mui/icons-material/Login";
-import registerlogo from '../assets/images/logos/registerlogo.png';
-
-// Email Validation
-const isEmail = (email) =>
-  /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(email);
-
-function Login() {
-  const [showPassword, setShowPassword] = React.useState(false);
-
-  //Inputs
-  const [emailInput, setEmailInput] = useState();
-  const [passwordInput, setPasswordInput] = useState();
-  const [rememberMe, setRememberMe] = useState();
-
-  // Inputs Errors
-  const [emailError, setEmailError] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
-
-  // Overall Form Validity
-  const [formValid, setFormValid] = useState();
-  const [success, setSuccess] = useState();
-
-  // Handles Display and Hide Password
-  const handleClickShowPassword = () => setShowPassword((show) => !show);
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
-
-  // Label for Checkbox
-  const label = { inputProps: { "aria-label": "Checkbox demo" } };
-
-  // Validation for onBlur Email
-  const handleEmail = () => {
-    console.log(isEmail(emailInput));
-    if (!isEmail(emailInput)) {
-      setEmailError(true);
-      return;
-    }
-
-    setEmailError(false);
-  };
-
-  // Validation for onBlur Password
-  const handlePassword = () => {
-    if (
-      !passwordInput ||
-      passwordInput.length < 5 ||
-      passwordInput.length > 20
-    ) {
-      setPasswordError(true);
-      return;
-    }
-
-    setPasswordError(false);
-  };
-
-  //handle Submittion
-  const handleSubmit = () => {
-    setSuccess(null);
-    //First of all Check for Errors
-
-    // If Email error is true
-    if (emailError || !emailInput) {
-      setFormValid("Email is Invalid. Please Re-Enter");
-      return;
-    }
-
-    // If Password error is true
-    if (passwordError || !passwordInput) {
-      setFormValid(
-        "Password is set btw 5 - 20 characters long. Please Re-Enter"
-      );
-      return;
-    }
-    setFormValid(null);
-
-    // Proceed to use the information passed
-    console.log("Email : " + emailInput);
-    console.log("Password : " + passwordInput);
-    console.log("Remember : " + rememberMe);
-
-    //Show Successfull Submittion
-    setSuccess("Form Submitted Successfully");
-  };
-
+import * as React from 'react';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import CssBaseline from '@mui/material/CssBaseline';
+import TextField from '@mui/material/TextField';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import Checkbox from '@mui/material/Checkbox';
+import Link from '@mui/material/Link';
+import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
+import Typography from '@mui/material/Typography';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import registerlogo from "../assets/images/logos/registerlogo.png";
+function Copyright(props) {
   return (
-    <section className="login-forms">
-      <div class="herobg"></div>
-
-      <div className="reg-logo">
-<img src={registerlogo} alt="logo" />
-
-</div>
-
-      <div className="login-container">
-        <Paper elevation={3} style={{ padding: "10px", paddingBottom: "50px" }}>
-          <div>
-            <div>
-              <TextField
-                label="Email Address"
-                fullWidth
-                error={emailError}
-                id="standard-basic"
-                variant="standard"
-                sx={{ width: "100%" }}
-                value={emailInput}
-                InputProps={{}}
-                size="small"
-                onBlur={handleEmail}
-                onChange={(event) => {
-                  setEmailInput(event.target.value);
-                }}
-              />
-            </div>
-            <div style={{ marginTop: "5px" }}>
-              <FormControl sx={{ width: "100%" }} variant="standard">
-                <InputLabel
-                  error={passwordError}
-                  htmlFor="standard-adornment-password"
-                >
-                  Password
-                </InputLabel>
-                <Input
-                  error={passwordError}
-                  onBlur={handlePassword}
-                  id="standard-adornment-password"
-                  type={showPassword ? "text" : "password"}
-                  onChange={(event) => {
-                    setPasswordInput(event.target.value);
-                  }}
-                  value={passwordInput}
-                  endAdornment={
-                    <InputAdornment position="end">
-                      <IconButton
-                        aria-label="toggle password visibility"
-                        onClick={handleClickShowPassword}
-                        onMouseDown={handleMouseDownPassword}
-                      >
-                        {showPassword ? <VisibilityOff /> : <Visibility />}
-                      </IconButton>
-                    </InputAdornment>
-                  }
-                />
-              </FormControl>
-            </div>
-
-            <div style={{ fontSize: "10px" }}>
-              <Checkbox
-                {...label}
-                size="small"
-                onChange={(event) => setRememberMe(event.target.checked)}
-              />
-              Remember Me
-            </div>
-
-            <div style={{ marginTop: "10px" }}>
-              <Button
-                variant="contained"
-                fullWidth
-                // startIcon={<LoginIcon />}
-                onClick={handleSubmit}
-              >
-                Register
-              </Button>
-            </div>
-
-            {/* Show Form Error if any */}
-            {formValid && (
-              <Stack sx={{ width: "100%", paddingTop: "10px" }} spacing={2}>
-                <Alert severity="error" size="small">
-                  {formValid}
-                </Alert>
-              </Stack>
-            )}
-
-            {/* Show Success if no issues */}
-            {success && (
-              <Stack sx={{ width: "100%", paddingTop: "10px" }} spacing={2}>
-                <Alert severity="success" size="small">
-                  {success}
-                </Alert>
-              </Stack>
-            )}
-
-            <div style={{ marginTop: "7px", fontSize: "10px" }} margin="left">
-              <a>Forgot Password</a>
-              <br />
-              Do you have an account ?{" "}
-              <small style={{ textDecoration: "underline", color: "blue" }}>
-                Sign Up
-              </small>
-            </div>
-          </div>
-        </Paper>
-      </div>
-    </section>
+    <Typography variant="body2" color="text.secondary" align="center" {...props}>
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
   );
 }
 
+const theme = createTheme();
+
+ function Login() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    console.log({
+      email: data.get('email'),
+      password: data.get('password'),
+    });
+  };
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Grid container component="main" sx={{ height: '100vh' }}>
+        <CssBaseline />
+        <Grid
+          item
+          xs={false}
+          sm={4}
+          md={7}
+          sx={{
+            backgroundImage: `url(${registerlogo})`,
+            backgroundRepeat: 'no-repeat',
+            backgroundColor: (t) =>
+              t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <Box
+            sx={{
+              my: 8,
+              mx: 4,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+            }}
+          >
+            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+              <LockOutlinedIcon />
+            </Avatar>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                autoComplete="current-password"
+              />
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Remember me"
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign In
+              </Button>
+              <Grid container>
+                <Grid item xs>
+                  <Link href="#" variant="body2">
+                    Forgot password?
+                  </Link>
+                </Grid>
+                <Grid item>
+                  <Link href="#" variant="body2">
+                    {"Don't have an account? Sign Up"}
+                  </Link>
+                </Grid>
+              </Grid>
+              {/* <Copyright sx={{ mt: 5 }} /> */}
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </ThemeProvider>
+  );
+}
 export { Login };

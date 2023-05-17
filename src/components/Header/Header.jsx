@@ -28,7 +28,7 @@ const Header = () => {
       style={{boxShadow: headerShadow}}
     >
       <div className={`innerWidth ${css.container} flexCenter`}>
-        <img className={css.name} src='./logo.png'/>
+        <img className={css.name} src='./needuplogo.png'/>
         <ul
           className={`flexCenter ${css.menu}`}
           ref={menuRef}
