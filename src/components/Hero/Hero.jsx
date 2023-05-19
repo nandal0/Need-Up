@@ -14,14 +14,15 @@ const Hero = () => {
       >
         <div className={css.upperElements}>
           <motion.span className="primaryText" variants={fadeIn("right", "tween", 0.2, 1)}>
-            Hey There,
+            
+            No Need to Go Anywhere
             <br />
-            I'm Binjan.
+            Your necessity Needup
           </motion.span>
           <motion.span className="secondaryText"variants={fadeIn("left", "tween", 0.4, 1)}>
-            I design beautiful simple
+            First ever time in India
             <br />
-            things, And I love what i do{" "}
+           Work done at home
           </motion.span>
         </div>
 
@@ -33,22 +34,22 @@ const Hero = () => {
         </motion.div>
 
         <a className={css.email} href="mailto:zainkeepscode@gmail.com">
-          zainkeepscode@gmail.com
+          {/* zainkeepscode@gmail.com */}
         </a>
 
         <div className={css.lowerElements}>
           <motion.div variants={fadeIn("right", "tween", 0.3, 1)} className={css.experience}>
-            <div className="primaryText">10</div>
+            <div className="primaryText"></div>
             <div className="secondaryText">
-              <div>Years</div>
-              <div>Experience</div>
+              {/* <div>Years</div>
+              <div>Experience</div> */}
             </div>
           </motion.div>
 
           <motion.div variants={fadeIn("left", "tween", 0.5, 1)} className={css.certificate}>
-            <img src="./certificate.png" alt="" />
-            <span>CERTIFIED PROFATIONAL</span>
-            <span>UI/UX DESIGNER</span>
+            {/* <img src="./certificate.png" alt="" /> */}
+            {/* <span>CERTIFIED PROFATIONAL</span>
+            <span>UI/UX DESIGNER</span> */}
           </motion.div>
         </div>
       </motion.div>

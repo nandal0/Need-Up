@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-// import './App.css';
+import './App.css';
 // import {Routes, Route, Navigate} from 'react-router-dom';
 // import Login from './components/login/Login';
 import Home from './component/Home'
@@ -72,14 +72,16 @@ export default function App() {
             <div className="container pt-4 pb-4">
                 <Routes>
                     {/* private */}
-                    <Route element={<PrivateRoute />}>
+                    {/* <Route element={<PrivateRoute />}>
                         <Route path="/needup" element={<Home />} />
-                        {/* <Route path="users/*" element={<UsersLayout />} /> */}
-                    </Route>
+                        <Route path="users/*" element={<UsersLayout />} />
+                    </Route> */}
                     {/* public */}
 
+                    <Route path="/needup" element={<Home />} />
+
                     <Route path="account/*" element={<AccountLayout />} />
-                    <Route path="*" element={<Navigate to="/" />} />
+                    {/* <Route path="*" element={<Navigate to="/" />} /> */}
                     <Route path="/" element={<LandingPage />} />
                     <Route path="/404" element={<NotFound/>}/>
                     {/* <Route path="*" element={ <Navigate to="/404" replace />}/> */}

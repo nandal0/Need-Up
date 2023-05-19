@@ -18,6 +18,10 @@
             align-items: center;
             justify-content: space-between;
             flex-wrap: wrap;
+            .heading{
+                
+                font-size: 15px;
+            }
         }
 
 
@@ -63,16 +67,18 @@
                 background-position: bottom;
             }
             position: absolute;
-            bottom: -2rem;
+            bottom: -5rem;
             margin: auto;
             background-image: url("../../../public/splash.png");
             background-repeat: no-repeat;
             background-size: 23rem;
-            left: 33%;
+            left:27%;
 
             img {
-                width: 36rem;
-                height: 27rem;
+               
+    width: 34rem;
+    height: 24rem;
+
             
     object-fit: cover;
                 @media (max-width: $sm ) {
@@ -95,4 +101,8 @@
             color: orange;
         }
     }
+}
+
+.primaryText{
+    font-size:15px;
 }
