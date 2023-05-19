@@ -1,107 +1,111 @@
-
-.register-forms{
-  display: flex;
-  justify-items: space-around;
-  margin: auto;
-  
-  /* width: 100vw; */
-  /* overflow: hidden !important; */
-
+.image-signin{
+  width: 781px;
+  height: 627px;
+  object-fit: cover;
+  position: absolute;
+  right:0px;
+  padding: 30px;
 }
-.login-forms{
-  display: flex;
-  justify-content: space-around;
+.image-signup{
+  width: 781px;
+  height: 627px;
+  object-fit: cover;
+  position: absolute;
+  left:0px;
+  padding: 30px;
 }
-
-section{
-  /* display: flex; */
+.css-1y8ugea{
+  margin-top: 0px!important;
+}
+.login_needup_logo{
+  width:30%;
+}
+.register_needup_logo{
+  width:30%;
+}
+.section-1{
+  display: flex;
   position: relative;
-  height: 100vh;
-  width: 100vw;
+  height: 100vh;width: 100vw;
   overflow: hidden;
 }
-
-.register-form-container {
-  margin-left: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.register-form {
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  margin-top: 20px;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-  /* padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px; */
-}
-
-button[type="submit"] {
-  padding: 10px;
-  background-color: #0074d9;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-
-.herotwo{
+.herob{
   position: absolute;
-  top: -50px;right: -34vw;
-  width: 80vw;
-  height: 104vh;
-  background-color: #CCC9EF;
-  border-radius: 2005px;
-}
-
+  width: 85vw;
+  height: 105vh;
+  right: -35vw;top: -29px;
+  bottom: -99px;
+  background: #CCC9EF;
+  border-radius: 1500px;
+}  
 .herobg{
   position: absolute;
-  width: 80vw;
-  height: 120vh;
+  width: 85vw;
+  height: 105vh;
   left: -35vw;top: -29px;
   bottom: -99px;
   background: #CCC9EF;
   border-radius: 1500px;
+}  
+
+@media  (max-width:800px){
+  .herobg{
+    display: none;
+  }
+}
+@media  (max-width:800px){
+  .herob{
+    display: none;
+  }
+}
+@media (min-width:800px) and (max-width:1024px){
+  .image-signin{
+    position: absolute;
+    right: -40px;
+    top: 50px;
+    width: 676px;
+    height: 530px;
+    padding: 50px;
+  }
+  .herobg{
+    width:90vw;
+  }
+}
+@media (min-width:800px) and (max-width:1024px){
+  .image-signup{
+    position: absolute;
+    left: -40px;
+    top: 50px;
+    width: 676px;
+    height: 530px;
+    padding: 50px;
+  }
+  .herob{
+    width:90vw;
+  }
 }
 
-.singup-container{
-  width: 600px;
-  margin: 100px;
 
+
+  
+
+@media (max-width: 800px){
+
+.css-gadse4-MuiPaper-root-MuiGrid-root {
+    -webkit-flex-basis: 41.666667%;
+    -ms-flex-preferred-size: 41.666667%;
+    flex-basis: 100%!important;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    max-width: 100%!important;
 }
-.login-container{
-  width: 500px;
-  margin: 100px;
-margin-left: 200px;
 }
 
-.reg-logo
-{
-  z-index: 41;
+@media (max-width: 800px){
+
+.css-dphtc1-MuiGrid-root {
+   display: none;
 }
-.reg-logo>img{
-  width: 700px;
-  height: 501px;
-  object-fit: contain;
 }
