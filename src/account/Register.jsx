@@ -15,7 +15,8 @@ import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import registerlogo from "../assets/images/logos/registerlogo.png";
 import loginlogo from '../assets/images/logos/loginlogo.png';
-
+import "./style.css";
+import needuplogo from '../assets/images/logos/needuplogo.png'
 
 function Copyright(props) {
   return (
@@ -44,8 +45,9 @@ const theme = createTheme();
 
   return (
     <ThemeProvider theme={theme}>
+    
       <Grid container component="main" sx={{ height: '100vh' }}>
-        
+      <section className="section-1">
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
@@ -56,13 +58,23 @@ const theme = createTheme();
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
-            </Avatar>
+            {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}> */}
+            <img class="register_needup_logo" src={needuplogo} alt="Needup logo"></img>
+            {/* </Avatar> */}
             <Typography component="h1" variant="h5">
-              Sign in
+              Sign Up
             </Typography>
             <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 1 }}>
+            <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="full name"
+                label="Full Name"
+                name="full name"
+                autoComplete="full name"
+                autoFocus
+              />
               <TextField
                 margin="normal"
                 required
@@ -93,7 +105,7 @@ const theme = createTheme();
                 variant="contained"
                 sx={{ mt: 3, mb: 2 }}
               >
-                Sign In
+                Sign Up
               </Button>
               <Grid container>
                 <Grid item xs>
@@ -103,7 +115,7 @@ const theme = createTheme();
                 </Grid>
                 <Grid item>
                   <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
+                    {" have an account    Sign In"}
                   </Link>
                 </Grid>
               </Grid>
@@ -112,13 +124,14 @@ const theme = createTheme();
           </Box>
         </Grid>
         <CssBaseline />
+      
         <Grid
           item
           xs={false}
           sm={4}
           md={7}
           sx={{
-            backgroundImage: `url(${loginlogo})`,
+            // backgroundImage: `url(${loginlogo})`,
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
@@ -126,7 +139,11 @@ const theme = createTheme();
             backgroundPosition: 'center',
           }}
         />
-       
+
+       <div className="herob">
+        <img class="image-signup" src={loginlogo}></img>
+        </div>
+    </section>
       </Grid>
     </ThemeProvider>
   );

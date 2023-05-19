@@ -67,6 +67,11 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import registerlogo from "../assets/images/logos/registerlogo.png";
+import "./style.css";
+import needuplogo from '../assets/images/logos/needuplogo.png'
+import { fadeIn,slideIn, staggerContainer } from "../utils/motion";
+import css from "../components/Hero/Hero.module.scss";
+import { motion } from "framer-motion";
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -102,14 +107,30 @@ const theme = createTheme();
           sm={4}
           md={7}
           sx={{
-            backgroundImage: `url(${registerlogo})`,
+
+            // backgroundImage: `url(${registerlogo})`,
+
             backgroundRepeat: 'no-repeat',
             backgroundColor: (t) =>
               t.palette.mode === 'light' ? t.palette.grey[50] : t.palette.grey[900],
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
-        />
+        >
+          <div className="herobg">
+            <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: false, amount: 0.25 }}
+        className={`innerWidth ${css.container}`}
+      ></motion.div>
+          <motion.span  variants={fadeIn("right", "tween", 0.2, 1)}>
+          <img class="image-signin" src={registerlogo}></img>
+          </motion.span>
+       
+</div>
+        </Grid>
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
             sx={{
@@ -120,9 +141,9 @@ const theme = createTheme();
               alignItems: 'center',
             }}
           >
-            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-              <LockOutlinedIcon />
-            </Avatar>
+            {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}> */}
+           <img class="login_needup_logo" src={needuplogo} alt="Needup logo"></img>
+            {/* </Avatar> */}
             <Typography component="h1" variant="h5">
               Sign in
             </Typography>
