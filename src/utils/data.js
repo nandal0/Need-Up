@@ -1,21 +1,38 @@
 import { HiOutlineDesktopComputer } from "react-icons/hi";
 import { CiMobile1 } from "react-icons/ci";
 import { MdWorkspacesOutline } from "react-icons/md";
+import A1 from '../assets/images/SLIDER/A1.png';
+import A2 from '../assets/images/SLIDER/A2.png';
+import A3 from '../assets/images/SLIDER/A3.png';
+import A4 from '../assets/images/SLIDER/A4.png';
+import A5 from '../assets/images/SLIDER/A5.png';
+import A6 from '../assets/images/SLIDER/A6.png';
+import A7 from '../assets/images/SLIDER/A7.png';
+import A8 from '../assets/images/SLIDER/A8.png';
+import A9 from '../assets/images/SLIDER/A9.png';
+import A10 from '../assets/images/SLIDER/A10.png';
+import A11 from '../assets/images/SLIDER/A11.png';
+import A12 from '../assets/images/SLIDER/A12.png';
+import A13 from '../assets/images/SLIDER/A13.png';
+import A14 from '../assets/images/SLIDER/A14.png';
+import A15 from '../assets/images/SLIDER/A15.png';
+import A16 from '../assets/images/SLIDER/A16.png';
+
 export const projectExperience = [
   {
-    name: "Website Design",
+    name: "Apply for services online",
     projects: 76,
     icon: HiOutlineDesktopComputer,
     bg: "#286F6C",
   },
   {
-    name: "Mobile App Design",
+    name: "Track the status of your applications",
     projects: 63,
     icon: CiMobile1,
     bg: "#EEC048",
   },
   {
-    name: "Brand Identity",
+    name: "Pay fees online ",
     projects: 47,
     icon: MdWorkspacesOutline,
     bg: "#F26440",
@@ -33,25 +50,33 @@ export const workExp = [
   {
     place: "Self-Employed, Brisbane",
     tenure: "Aug 2014 - Sep 2016",
-    role: "Visual Designer",
+    role: "Convenient",
     detail:
-      "A visual desginer dsesign for a variety of platoforms, may include internet and internet sites, games, movies, kioasks and wearbies. In short, they create the concepts",
+      "You can access our services online or through operators, 24/7.",
   },
   {
     place: "New Man Services",
     tenure: "Aug 2014 - Sep 2016",
-    role: "UI/UX Designer",
+    role: "Efficient",
     detail:
-      "A visual desginer dsesign for a variety of platoforms, may include internet and internet sites, games, movies, kioasks and wearbies. In short, they create the concepts",
+      "We use the latest technology to make it easy for you to complete your transactions quickly and easily.",
   },
   {
     place: "Global Solution",
     tenure: "Aug 2014 - Sep 2016",
-    role: "Sr. Product Designer",
+    role: "Secure",
     detail:
-      "A visual desginer dsesign for a variety of platoforms, may include internet and internet sites, games, movies, kioasks and wearbies. In short, they create the concepts",
+      "We use the latest security measures to protect your personal information ",
+  },
+  {
+    place: "Global Solution",
+    tenure: "Aug 2014 - Sep 2016",
+    role: "Affordable",
+    detail:
+      "We offer our services at a competitive price",
   },
 ];
+
 
 export const comments = [
   {
@@ -129,3 +154,87 @@ export const sliderSettings = {
     },
   ],
 };
+
+export const SlideImage=
+  [
+
+{    id:'1',
+    src:A1,
+  },
+
+{    id:'2',
+    src:A2,
+
+  },
+
+{    id:'3',
+    src:A3,
+
+  },
+
+{    id:'4',
+    src:A4,
+
+  },
+
+{    id:'5',
+    src:A5,
+
+  },
+
+{    id:'6',
+    src:A6,
+
+  },
+
+{    id:'7',
+    src:A7,
+
+  },
+
+{    id:'8',
+    src:A8,
+
+  },
+{    id:'9',
+    src:A9,
+
+  },
+{    id:'10',
+    src:A10,
+
+  },
+{    id:'11',
+    src:A11,
+
+  },
+{    id:'12',
+    src:A12,
+
+  },
+  
+{    id:'13',
+    src:A13,
+
+  },
+  
+
+{    id:'14',
+    src:A14,
+
+  },
+  
+
+{    id:'15',
+    src:A15,
+
+  },
+  
+
+{    id:'16',
+    src:A16,
+
+  },
+  
+  ]
+
