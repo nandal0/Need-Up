@@ -17,6 +17,7 @@ import registerlogo from "../assets/images/logos/registerlogo.png";
 import loginlogo from '../assets/images/logos/loginlogo.png';
 import "./style.css";
 import needuplogo from '../assets/images/logos/needuplogo.png'
+import { NavLink ,useNavigate } from "react-router-dom";
 
 function Copyright(props) {
   return (
@@ -34,6 +35,15 @@ function Copyright(props) {
 const theme = createTheme();
 
  function Register() {
+  const navigate = useNavigate();
+
+
+  const naviagteHomePage=()=>{
+
+console.log('sdf');
+    navigate('/');
+
+  }
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -59,7 +69,7 @@ const theme = createTheme();
             }}
           >
             {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}> */}
-            <img class="register_needup_logo" src={needuplogo} alt="Needup logo"></img>
+            <img class="register_needup_logo"  onClick={naviagteHomePage}  src={needuplogo} alt="Needup logo"></img>
             {/* </Avatar> */}
             <Typography component="h1" variant="h5">
               Sign Up
@@ -114,9 +124,9 @@ const theme = createTheme();
                   </Link>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    {" have an account    Sign In"}
-                  </Link>
+                  <NavLink to="/account/login" href="#" variant="body2">
+                    {" Have an account    Sign In"}
+                  </NavLink>
                 </Grid>
               </Grid>
               {/* <Copyright sx={{ mt: 5 }} /> */}

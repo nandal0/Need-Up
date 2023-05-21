@@ -2,6 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { Login, Register } from './';
+import Forget from './Forget';
 
 export { AccountLayout };
 
@@ -20,6 +21,7 @@ function AccountLayout() {
                     <Routes>
                         <Route path="login" element={<Login />} />
                         <Route path="register" element={<Register />} />
+                        <Route path="forget-password" element={<Forget />} />
                     </Routes>
                 </div>
             </div>

@@ -71,8 +71,11 @@ import "./style.css";
 import needuplogo from '../assets/images/logos/needuplogo.png'
 import { fadeIn,slideIn, staggerContainer } from "../utils/motion";
 import css from "../components/Hero/Hero.module.scss";
+import { NavLink ,useNavigate } from "react-router-dom";
+
 import { motion } from "framer-motion";
 function Copyright(props) {
+  
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
@@ -96,11 +99,20 @@ const theme = createTheme();
       password: data.get('password'),
     });
   };
+  const navigate = useNavigate();
 
+
+  const naviagteHomePage=()=>{
+
+
+    navigate('/');
+
+  }
   return (
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
+        
         <Grid
           item
           xs={false}
@@ -142,7 +154,7 @@ const theme = createTheme();
             }}
           >
             {/* <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}> */}
-           <img class="login_needup_logo" src={needuplogo} alt="Needup logo"></img>
+           <img onClick={naviagteHomePage} class="login_needup_logo" src={needuplogo} alt="Needup logo"></img>
             {/* </Avatar> */}
             <Typography component="h1" variant="h5">
               Sign in
@@ -182,14 +194,14 @@ const theme = createTheme();
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                  <NavLink to="/account/forget-password" href="#" variant="body2">
                     Forgot password?
-                  </Link>
+                  </NavLink>
                 </Grid>
                 <Grid item>
-                  <Link href="#" variant="body2">
-                    {"Don't have an account? Sign Up"}
-                  </Link>
+                  <NavLink to="/account/register" variant="body2">
+                    Don't have an account? Sign Up
+                  </NavLink>
                 </Grid>
               </Grid>
               {/* <Copyright sx={{ mt: 5 }} /> */}

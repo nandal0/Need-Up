@@ -14,9 +14,9 @@ const Appp = () => {
     <div className={`bg-primary ${css.container}`}>
       <Header/>
       <Hero/>
+      <Portfolio/>
       <Experties/>
       <Work/>
-      <Portfolio/>
       <People/>
       <Footer/>
     </div>
