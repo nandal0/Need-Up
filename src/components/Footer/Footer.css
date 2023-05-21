@@ -172,7 +172,7 @@ img {
 }
 
 .footer-grid {
-    width: 100%;
+    width: 100%;    
     max-width: 610px;
 
     grid-template-rows: auto auto;
@@ -186,7 +186,7 @@ img {
     margin-bottom: 10px;
     font-family: Inter,sans-serif;
     font-size: 16px;  
-    
+
     text-decoration: none;
     display: block;
 }
