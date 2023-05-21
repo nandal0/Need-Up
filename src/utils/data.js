@@ -17,7 +17,11 @@ import A13 from '../assets/images/SLIDER/A13.png';
 import A14 from '../assets/images/SLIDER/A14.png';
 import A15 from '../assets/images/SLIDER/A15.png';
 import A16 from '../assets/images/SLIDER/A16.png';
-
+import B2 from  '../assets/Reviewimg/B2.PNG';
+import B4 from  '../assets/Reviewimg/B4.PNG';
+import B6 from  '../assets/Reviewimg/B6.PNG';
+import B7 from  '../assets/Reviewimg/B7.PNG';
+import B8 from  '../assets/Reviewimg/B8.PNG';
 export const projectExperience = [
   {
     name: "Apply for services online",
@@ -80,39 +84,34 @@ export const workExp = [
 
 export const comments = [
   {
-    name: "Anamika Sandula",
-    post: "Creative Manager",
+    name: "Tayab Hussain",
     comment:
       "I was so stressed about completing my  updating Aadhar Card, but NEEDUP made the process so easy. Their team was very helpful and knowledgeable, and they were always available to answer my questions. I would highly recommend NEEDUP to anyone who needs help with their documentation work",
-    img: "./people2.png",
+    img: B2,
   },
   {
-    name: "Anamika Sandula",
-    post: "Creative Manager",
+    name: "Shruti Goyal",
     comment:
       "I was really struggling to fill out my tax forms, but NEEDUP made it so simple. Their team walked me through the process step-by-step, and they were always patient and understanding. I would definitely use NEEDUP again in the future.",
-    img: "./people1.png",
+    img: B8,
   },
   {
-    name: "Anamika Sandula",
-    post: "Creative Manager",
+    name: "Ankit Kashyap",
     comment:
       "I used to spend hours doing my documentation work. But with NEEDUP, I can get it done in minutes. I'm so glad I found this service!",
-    img: "./people2.png",
+    img: B4,
   },
   {
-    name: "Anamika Sandula",
-    post: "Creative Manager",
+    name: "Priyanka Patel",
     comment:
       "I was so stressed about my documentation work. But NEEDUP took care of everything for me. I couldn't be happier!",
-    img: "./people1.png",
+    img: B7,
   },
   {
-    name: "Anamika Sandula",
-    post: "Creative Manager",
+    name: "Khushi",
     comment:
       "Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-    img: "./people2.png",
+    img: B6,
   },
  
 ];
