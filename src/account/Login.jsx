@@ -72,8 +72,10 @@ import needuplogo from '../assets/images/logos/needuplogo.png'
 import { fadeIn,slideIn, staggerContainer } from "../utils/motion";
 import css from "../components/Hero/Hero.module.scss";
 import { NavLink ,useNavigate } from "react-router-dom";
+import toast, { Toaster } from 'react-hot-toast';
 
 import { motion } from "framer-motion";
+import { verifyPassword } from '../API/helper/helper';
 function Copyright(props) {
   
   return (
@@ -92,12 +94,32 @@ const theme = createTheme();
 
  function Login() {
   const handleSubmit = (event) => {
+
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    let loginData={
+      
+      email: data.get('email'),
+      password: data.get('password'),
+    }
     console.log({
       email: data.get('email'),
       password: data.get('password'),
     });
+
+    let loginPromise = verifyPassword({email: loginData.email, password : loginData.password })
+    toast.promise(loginPromise, {
+      loading: 'Checking...',
+      success : <b>Login Successfully...!</b>,
+      error : <b>Password Not Match!</b>
+    });
+
+    loginPromise.then(res => {
+      let { token } = res.data;
+      localStorage.setItem('token', token);
+      navigate('/needup')
+    })
+
   };
   const navigate = useNavigate();
 
@@ -112,7 +134,8 @@ const theme = createTheme();
     <ThemeProvider theme={theme}>
       <Grid container component="main" sx={{ height: '100vh' }}>
         <CssBaseline />
-        
+        <Toaster position='top-center' reverseOrder={false}></Toaster>
+
         <Grid
           item
           xs={false}

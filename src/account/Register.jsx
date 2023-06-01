@@ -18,6 +18,8 @@ import loginlogo from '../assets/images/logos/loginlogo.png';
 import "./style.css";
 import needuplogo from '../assets/images/logos/needuplogo.png'
 import { NavLink ,useNavigate } from "react-router-dom";
+import { registerUser } from '../API/helper/helper'
+import toast, { Toaster } from 'react-hot-toast';
 
 function Copyright(props) {
   return (
@@ -35,6 +37,7 @@ function Copyright(props) {
 const theme = createTheme();
 
  function Register() {
+  
   const navigate = useNavigate();
 
 
@@ -44,19 +47,42 @@ console.log('sdf');
     navigate('/');
 
   }
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
+    
     event.preventDefault();
     const data = new FormData(event.currentTarget);
+    let UserData={
+      name:data.get('name'),
+      email: data.get('email'),
+      password: data.get('password'),
+
+    }
+    console.log("userData==>",UserData);
+    
     console.log({
+      name:data.get('name'),
       email: data.get('email'),
       password: data.get('password'),
     });
+    // console.log(data);
+    let registerPromise = registerUser(UserData)
+    // console.log(registerPromise);
+    toast.promise(registerPromise, {
+
+      loading: 'Creating...',
+      success : <b>Register Successfully...!</b>,
+      error : <b>Already Register.</b>
+    });
+    registerPromise.then(function(){ navigate('/needup')});
+
   };
 
   return (
     <ThemeProvider theme={theme}>
     
       <Grid container component="main" sx={{ height: '100vh' }}>
+      <Toaster position='top-center' reverseOrder={false}></Toaster>
+
       <section className="section-1">
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
           <Box
@@ -81,7 +107,7 @@ console.log('sdf');
                 fullWidth
                 id="full name"
                 label="Full Name"
-                name="full name"
+                name="name"
                 autoComplete="full name"
                 autoFocus
               />
@@ -119,9 +145,9 @@ console.log('sdf');
               </Button>
               <Grid container>
                 <Grid item xs>
-                  <Link href="#" variant="body2">
+                <NavLink to="/account/forget-password" href="#" variant="body2">
                     Forgot password?
-                  </Link>
+                  </NavLink>
                 </Grid>
                 <Grid item>
                   <NavLink to="/account/login" href="#" variant="body2">

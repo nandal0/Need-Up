@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 
 import { Login, Register } from './';
 import Forget from './Forget';
+import Recovery from './Recovery';
+import Reset from './Reset';
 
 export { AccountLayout };
 
@@ -21,6 +23,8 @@ function AccountLayout() {
                     <Routes>
                         <Route path="login" element={<Login />} />
                         <Route path="register" element={<Register />} />
+                        <Route path="recovery" element={<Recovery/>} />
+                        <Route path="reset" element={<Reset/>} />
                         <Route path="forget-password" element={<Forget />} />
                     </Routes>
                 </div>

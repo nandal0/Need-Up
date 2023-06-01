@@ -29,6 +29,22 @@
   height: 100vh;width: 100vw;
   overflow: hidden;
 }
+
+.otp-recovery{
+  font-size: 18px;
+  cursor: pointer;
+}
+.section-2{
+ 
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  justify-content: center;
+
+}
 .herob{
   position: absolute;
   width: 85vw;
